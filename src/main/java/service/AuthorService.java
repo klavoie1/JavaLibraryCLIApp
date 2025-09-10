@@ -48,5 +48,29 @@ public class AuthorService {
         }
     }
 
+    public static void addGenre(Author author, String genre) {
+        if (author != null) {
+            author.getGenres().add(genre);
+        } else {
+            System.out.println("Author not Found!");
+        }
+    }
+
+    public static void removeGenre(Author author, String genre) {
+        if (author != null) {
+            if (genre != null) {
+                author.getGenres().remove(genre);
+            } else { System.out.println("That genre is not in the list!"); }
+        } else {
+            System.out.println("Author not Found!");
+        }
+    }
+
+    public static void listGenres(Author author) {
+        System.out.print(author.getName() + " Genres");
+        for (String genre : author.getGenres()) {
+            System.out.println(" - " + genre);
+        }
+    }
 
 }
