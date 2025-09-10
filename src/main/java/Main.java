@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        AuthorService authorService = new AuthorService();
 
         Book foundation = new Book(1, "Foundation", "Isaac Asimov",
                 296, true);
@@ -16,7 +15,7 @@ public class Main {
         Author isaacAsimov = new Author(1, "Isaac Asimov", "American",
                 LocalDate.of(1920, 1,2),
                 LocalDate.of(1992, 4, 6),
-                new ArrayList<>(List.of("Science Fiction, Hard Science, Space Opera, Classic")));
+                new ArrayList<>(List.of("Science Fiction, Hard Science, Space Opera")));
 
         Author andyWeir = new Author(2, "Andy Weir", "American",
                 LocalDate.of(1972,6,16),
@@ -32,9 +31,11 @@ public class Main {
         System.out.println(isaacAsimov.toString());
         System.out.println(testAuthor.toString());
 
-        System.out.println(authorService.authorAge(isaacAsimov));
-        System.out.println(authorService.authorAge(andyWeir));
-        System.out.println(authorService.authorAge(testAuthor));
+        System.out.println(AuthorService.authorAge(isaacAsimov));
+        System.out.println(AuthorService.authorAge(andyWeir));
+        System.out.println(AuthorService.authorAge(testAuthor));
 
+        System.out.println(AuthorService.authorSummary(isaacAsimov));
+        System.out.println(AuthorService.authorSummary(andyWeir));
     }
 }
