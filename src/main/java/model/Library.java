@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
-
+/**
+ * @author kenneth
+ */
 public class Library {
     private ArrayList<Book> books;
     private ArrayList<Author> authors;
