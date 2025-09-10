@@ -1,7 +1,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,23 +41,6 @@ public class Author {
                 ", dateOfDeath=" + dateOfDeath +
                 ", genres=" + genres +
                 "}";
-    }
-
-    /**
-     ** Uses the java.time library to calculate the date of birth to death. If the author has
-     ** not died, then the current time will be used to calculate the authors age in the
-     ** current year
-     **/
-    public String authorAge(LocalDate dateOfBirth, LocalDate dateOfDeath) {
-        if (this.dateOfDeath != null) {
-            int ageOfDeath = Period.between(this.dateOfBirth, this.dateOfDeath).getYears();
-
-            return this.name  + " died at the age of " + ageOfDeath;
-        } else {
-            int currentAge = Period.between(this.dateOfBirth, LocalDate.now()).getYears();
-
-            return this.name + " is currently " + currentAge + " years old.";
-        }
     }
 
     public int getId() { return id; }
