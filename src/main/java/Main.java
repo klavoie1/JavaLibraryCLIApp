@@ -1,5 +1,6 @@
 import model.Author;
 import model.Book;
+import service.AuthorService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        AuthorService authorService = new AuthorService();
 
         Book foundation = new Book(1, "Foundation", "Isaac Asimov",
                 296, true);
@@ -21,12 +23,18 @@ public class Main {
                 null,
                 new ArrayList<>(List.of("Science Fiction, Fantasy")));
 
+        Author testAuthor = new Author(3, "Test", "Test",
+                LocalDate.of(1900,1,1),
+                null,
+                new ArrayList<>(List.of("test")));
+
         System.out.println(foundation.toString());
         System.out.println(isaacAsimov.toString());
+        System.out.println(testAuthor.toString());
 
-        System.out.println(isaacAsimov.authorAge(isaacAsimov.getDateOfBirth(), isaacAsimov.getDateOfDeath()));
-        System.out.println(andyWeir.authorAge(andyWeir.getDateOfBirth(),isaacAsimov.getDateOfDeath()));
-
+        System.out.println(authorService.authorAge(isaacAsimov));
+        System.out.println(authorService.authorAge(andyWeir));
+        System.out.println(authorService.authorAge(testAuthor));
 
     }
 }
