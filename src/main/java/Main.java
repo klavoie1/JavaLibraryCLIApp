@@ -37,5 +37,15 @@ public class Main {
 
         System.out.println(AuthorService.authorSummary(isaacAsimov));
         System.out.println(AuthorService.authorSummary(andyWeir));
+
+        AuthorService.addGenre(isaacAsimov, "test");
+
+        System.out.println(isaacAsimov.getGenres());
+
+        AuthorService.removeGenre(isaacAsimov, "test");
+
+        System.out.println(isaacAsimov.getGenres());
+
+        AuthorService.listGenres(isaacAsimov);
     }
 }
