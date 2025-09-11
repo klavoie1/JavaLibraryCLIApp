@@ -25,7 +25,7 @@ public class Main {
         Author testAuthor = new Author(3, "Test", "Test",
                 LocalDate.of(1900,1,1),
                 null,
-                new ArrayList<>(List.of("test")));
+                new ArrayList<>(List.of()));
 
         System.out.println(foundation.toString());
         System.out.println(isaacAsimov.toString());
@@ -46,6 +46,10 @@ public class Main {
 
         System.out.println(isaacAsimov.getGenres());
 
+        AuthorService.removeGenre(isaacAsimov, "test");
+
         AuthorService.listGenres(isaacAsimov);
+
+        AuthorService.listGenres(testAuthor);
     }
 }
