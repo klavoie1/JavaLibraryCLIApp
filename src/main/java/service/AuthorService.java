@@ -56,16 +56,22 @@ public class AuthorService {
         }
     }
 
-    public static void removeGenre(Author author, String genre) {
+    public static void removeGenre(Author author, String selectedGenre) {
         if (author != null) {
-            if (genre != null) {
-                author.getGenres().remove(genre);
-            } else { System.out.println("That genre is not in the list!"); }
+            if (author.getGenres().isEmpty()) {
+                System.out.println("There are no genres listed for this author!");
+            } else {
+                author.getGenres().remove(selectedGenre);
+            }
         } else {
-            System.out.println("Author not Found!");
+            System.out.println("Author does not exist!");
         }
     }
 
+    /**
+     * Checks if the author genre array is empty first. If not, then the list is looped through
+     * and printed to the console.
+     */
     public static void listGenres(Author author) {
         if (author.getGenres().isEmpty()) {
             System.out.println(author.getName() + " has no listed genres");
