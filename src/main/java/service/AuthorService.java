@@ -67,10 +67,13 @@ public class AuthorService {
     }
 
     public static void listGenres(Author author) {
-        System.out.print(author.getName() + " Genres");
-        for (String genre : author.getGenres()) {
-            System.out.println(" - " + genre);
+        if (author.getGenres().isEmpty()) {
+            System.out.println(author.getName() + " has no listed genres");
+        } else {
+            System.out.print(author.getName() + " Genres");
+            for (String genre : author.getGenres()) {
+                System.out.println(" - " + genre);
+            }
         }
     }
-
 }
