@@ -2,6 +2,8 @@ package service;
 
 import model.Book;
 
+import java.util.Scanner;
+
 /**
  * @author kenneth
  */
@@ -16,6 +18,19 @@ public class BookService {
     }
 
     public static void addBook(Book book) {
+        boolean notCompleted = true;
 
+        while(notCompleted) {
+            Scanner scnr = new Scanner(System.in);
+            System.out.println("Enter Book Title: ");
+            book.setTitle(scnr.nextLine());
+            System.out.println("Enter the Books Author: ");
+            book.setAuthor(scnr.nextLine());
+            System.out.println("Enter the total number of pages: ");
+            book.setNumOfPages(Integer.parseInt(scnr.nextLine()));
+            System.out.println("Is this book available (true or false): ");
+            book.setAvailable(scnr.nextBoolean());
+            notCompleted = false;
+        }
     }
 }
