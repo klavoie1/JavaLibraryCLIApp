@@ -5,8 +5,8 @@ import java.util.ArrayList;
  * @author kenneth
  */
 public class Library {
-    private ArrayList<Book> books;
-    private ArrayList<Author> authors;
+    private static ArrayList<Book> books;
+    private static ArrayList<Author> authors;
 
     public Library() {
         books = new ArrayList<>();
@@ -14,11 +14,11 @@ public class Library {
     }
 
     public Library(ArrayList<Book> listOfBooks, ArrayList<Author> listOfAuthors) {
-        this.books = new ArrayList<>(listOfBooks);
-        this.authors = new ArrayList<>(listOfAuthors);
+        books = new ArrayList<>(listOfBooks);
+        authors = new ArrayList<>(listOfAuthors);
     }
 
-    public ArrayList<Book> getBooks() { return books; }
+    public static ArrayList<Book> getBooks() { return books; }
 
-    public ArrayList<Author> getAuthors() { return authors; }
+    public static ArrayList<Author> getAuthors() { return authors; }
 }
