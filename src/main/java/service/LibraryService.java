@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class LibraryService {
     Scanner scnr = new Scanner(System.in);
 
-    public void addBook(Library library, Book book) {
+    public static void addBook(Library library, Book book) {
         Library.getBooks().add(book);
     }
 
