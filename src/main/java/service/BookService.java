@@ -19,22 +19,25 @@ public class BookService {
     }
 
     public static void addBook(Library library, Book book) {
-        boolean notCompleted = true;
+        Library.getBooks().add(book);
+    }
 
-        while(notCompleted) {
-            Scanner scnr = new Scanner(System.in);
-            System.out.println("Enter Book Title: ");
-            book.setTitle(scnr.nextLine());
-            System.out.println("Enter the Books Author: ");
-            book.setAuthor(scnr.nextLine());
-            System.out.println("Enter the total number of pages: ");
-            book.setNumOfPages(Integer.parseInt(scnr.nextLine()));
-            System.out.println("Is this book available (true or false): ");
-            book.setAvailable(scnr.nextBoolean());
-            notCompleted = false;
+    public static void addBookFromInput(Library library) {
+        Scanner scnr = new Scanner(System.in);
+        Book book = new Book();
 
+        System.out.println("Enter Book Title: ");
+        book.setTitle(scnr.nextLine());
 
-            Library.getBooks().add(book);
-        }
+        System.out.println("Enter the Books Author: ");
+        book.setAuthor(scnr.nextLine());
+
+        System.out.println("Enter the total number of pages: ");
+        book.setNumOfPages(Integer.parseInt(scnr.nextLine()));
+
+        System.out.println("Is this book available (true or false): ");
+        book.setAvailable(scnr.nextBoolean());
+
+        addBook(library, book);
     }
 }
