@@ -1,6 +1,7 @@
 package service;
 
 import model.Book;
+import model.Library;
 
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class BookService {
                 "Available: " + book.isAvailable();
     }
 
-    public static void addBook(Book book) {
+    public static void addBook(Library library, Book book) {
         boolean notCompleted = true;
 
         while(notCompleted) {
@@ -31,6 +32,9 @@ public class BookService {
             System.out.println("Is this book available (true or false): ");
             book.setAvailable(scnr.nextBoolean());
             notCompleted = false;
+
+
+            Library.getBooks().add(book);
         }
     }
 }
