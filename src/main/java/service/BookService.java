@@ -22,6 +22,10 @@ public class BookService {
         Library.getBooks().add(book);
     }
 
+    public static void removeBook(Library library, Book book) {
+        Library.getBooks().remove(book);
+    }
+
     public static void addBookFromInput(Library library) {
         Scanner scnr = new Scanner(System.in);
         Book book = new Book();
