@@ -55,5 +55,5 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## Credits
 
-Created by [klavoie1](https://github.com/klavoie1)that can store the data.
+Created by [klavoie1](https://github.com/klavoie1) - 
 09/10/2025
