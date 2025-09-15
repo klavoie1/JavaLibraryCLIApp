@@ -60,10 +60,12 @@ public class Main {
 
         BookService.addBook(library, book);
 
-        libraryService.addBook(library, foundation);
+        LibraryService.addBook(library, foundation);
         libraryService.addAuthor(library, isaacAsimov);
         libraryService.addAuthor(library, andyWeir);
         libraryService.addAuthor(library, testAuthor);
+
+        BookService.addBookFromInput(library);
 
         System.out.println(libraryService.listAllBooks(library));
 
