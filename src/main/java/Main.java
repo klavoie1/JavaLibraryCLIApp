@@ -1,6 +1,9 @@
 import model.Author;
 import model.Book;
+import model.Library;
 import service.AuthorService;
+import service.BookService;
+import service.LibraryService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,6 +11,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        LibraryService libraryService = new LibraryService();
+        Library library = new Library();
+        Book book = new Book();
 
         Book foundation = new Book(1, "Foundation", "Isaac Asimov",
                 296, true);
@@ -51,5 +57,16 @@ public class Main {
         AuthorService.listGenres(isaacAsimov);
 
         AuthorService.listGenres(testAuthor);
+
+        BookService.addBook(library, book);
+
+        libraryService.addBook(library, foundation);
+        libraryService.addAuthor(library, isaacAsimov);
+        libraryService.addAuthor(library, andyWeir);
+        libraryService.addAuthor(library, testAuthor);
+
+        System.out.println(libraryService.listAllBooks(library));
+
+        System.out.println(libraryService.listAllAuthors(library));
     }
 }
