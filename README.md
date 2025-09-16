@@ -13,8 +13,9 @@ JavaLibraryCLIApp is a simple command line library manager written in Java. It a
 
 ### Prerequisites
 
-- Java 8 or higher
+- Java 24 or higher
 - [Maven](https://maven.apache.org/) installed
+- Junit 5.13.4
 
 ### Installation
 
@@ -41,7 +42,7 @@ Follow the on-screen prompts to manage books and authors in your library.
 
 ## Roadmap
 
-- [ ] Add JUnit testing for core functionality
+- [x] Add JUnit testing for core functionality
 - [ ] Improve error handling and validation
 - [ ] Enhance user interface and experience
 
