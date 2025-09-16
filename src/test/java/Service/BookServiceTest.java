@@ -17,8 +17,8 @@ public class BookServiceTest {
 
         LibraryService.addBook(library, book);
 
-        assertEquals(1, Library.getBooks().size());
-        assertEquals("Dune", Library.getBooks().getFirst().getTitle());
+        assertEquals(1, library.getBooks().size());
+        assertEquals("Dune", library.getBooks().getFirst().getTitle());
     }
 
     @Test
@@ -28,9 +28,9 @@ public class BookServiceTest {
 
         LibraryService.addBook(library, book);
 
-        assertEquals(1, Library.getBooks().size());
+        assertEquals(1, library.getBooks().size());
 
         BookService.removeBook(library, book);
-        assertTrue(Library.getBooks().isEmpty());
+        assertTrue(library.getBooks().isEmpty());
     }
 }
